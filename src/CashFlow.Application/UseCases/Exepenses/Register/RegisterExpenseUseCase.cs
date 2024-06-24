@@ -1,4 +1,5 @@
-﻿using CashFlow.Communication.Requests;
+﻿using Cash.Flow.Exception.ExeceptionsBase;
+using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
 
 namespace CashFlow.Application.UseCases.Exepenses.Register {
@@ -14,9 +15,8 @@ namespace CashFlow.Application.UseCases.Exepenses.Register {
             var result = validator.Validate(request);
             if (result.IsValid == false) {
                 var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
-                throw new ArgumentException(errorMessages.ToString());
-            }
-            
+                throw new ErrorOnValidationException(errorMessages);
+            }            
         }
     }
 }
