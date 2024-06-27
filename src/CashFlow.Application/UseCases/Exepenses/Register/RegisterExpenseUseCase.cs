@@ -1,9 +1,9 @@
 ﻿using CashFlow.Communication.Enums;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
-using System.ComponentModel.DataAnnotations;
 
-namespace CashFlow.Application.UseCases.Exepenses.Register {
+namespace CashFlow.Application.UseCases.Exepenses.Register
+{
     public class RegisterExpenseUseCase
     {
         public ResponseRegisterExpenseJson Execute(RequestExpenseJson request)
