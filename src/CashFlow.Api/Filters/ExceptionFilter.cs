@@ -1,4 +1,5 @@
-﻿using Cash.Flow.Exception.ExeceptionsBase;
+﻿using Cash.Flow.Exception;
+using Cash.Flow.Exception.ExeceptionsBase;
 using CashFlow.Communication.Responses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -23,12 +24,13 @@ public class ExceptionFilter : IExceptionFilter {
             context.Result = new BadRequestObjectResult(errorResponse);
         }
         else {
+            var errorResponse = new ResponseErrorJson(context.Exception.Message);
             context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
             context.Result = new BadRequestObjectResult(errorResponse);
         }
     }
     private void ThrowUnknowError(ExceptionContext context) {
-        var errorResponse = new ResponseErrorJson("Unknown error");
+        var errorResponse = new ResponseErrorJson(ResourceErrorMessage.UNKNOW_ERROR);
         context.HttpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
         context.Result = new ObjectResult(errorResponse);
      }
