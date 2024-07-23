@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cash.Flow.Exception", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Infrastructure", "src\CashFlow.Infrastructure\CashFlow.Infrastructure.csproj", "{854030FF-9441-4C5B-9B8F-082409A876A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validator.Tests", "tests\Validator.Tests\Validator.Tests.csproj", "{5C230242-F65A-48A3-90E8-94DB0A69F400}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validator.Tests", "tests\Validator.Tests\Validator.Tests.csproj", "{5C230242-F65A-48A3-90E8-94DB0A69F400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTestUtilities", "tests\CommonTestUtilities\CommonTestUtilities.csproj", "{A7A75652-F4EE-425B-A207-706129ACF936}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{5C230242-F65A-48A3-90E8-94DB0A69F400}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C230242-F65A-48A3-90E8-94DB0A69F400}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C230242-F65A-48A3-90E8-94DB0A69F400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A75652-F4EE-425B-A207-706129ACF936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A75652-F4EE-425B-A207-706129ACF936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A75652-F4EE-425B-A207-706129ACF936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A75652-F4EE-425B-A207-706129ACF936}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{D8F2F73A-5B76-46E4-9D72-63BA7E54AD9F} = {6CA57D02-DC97-4401-BF6B-0EC7ED6CB937}
 		{854030FF-9441-4C5B-9B8F-082409A876A8} = {6CA57D02-DC97-4401-BF6B-0EC7ED6CB937}
 		{5C230242-F65A-48A3-90E8-94DB0A69F400} = {F72728E5-CA34-45A2-B2B5-1D66EAAC1590}
+		{A7A75652-F4EE-425B-A207-706129ACF936} = {F72728E5-CA34-45A2-B2B5-1D66EAAC1590}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7845AE72-42B2-4AC7-B586-6F6B8CD15B82}
