@@ -14,7 +14,6 @@ public class ExceptionFilter : IExceptionFilter {
         else {
             ThrowUnknowError(context);
         }
-
     }
     private void HandleProjectExeception(ExceptionContext context) {
         if (context.Exception is ErrorOnValidationException) {
