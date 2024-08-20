@@ -11,9 +11,7 @@ public class ExceptionFilter : IExceptionFilter {
         if (context.Exception is CashFlowExecption) {
             HandleProjectExeception(context);
         }
-        else {
-            ThrowUnknowError(context);
-        }
+
     }
     private void HandleProjectExeception(ExceptionContext context) {
         if (context.Exception is ErrorOnValidationException) {
