@@ -1,6 +1,10 @@
 ﻿using CashFlow.Application.AutoMapper;
+using CashFlow.Application.UseCases.Exepenses.Delete;
 using CashFlow.Application.UseCases.Exepenses.GetAll;
+using CashFlow.Application.UseCases.Exepenses.GetById;
 using CashFlow.Application.UseCases.Exepenses.Register;
+using CashFlow.Application.UseCases.Exepenses.Update;
+using CashFlow.Domain.Repositories.Expenses;
 using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel.Design;
 using System.Net.NetworkInformation;
@@ -23,6 +27,9 @@ namespace CashFlow.Application
         {
             services.AddScoped<IRegisterExpenseUseCase, RegisterExpenseUseCase>();
             services.AddScoped<IGetAllExpensesUseCase, GetAllExpensesUseCase>();
+            services.AddScoped<IGetExpenseByIDUseCase, GetExpenseByIdUseCase>();
+            services.AddScoped<IDeleteExpenseUseCase, DeleteExpenseUseCase>();
+            services.AddScoped<IUpdateExpenseUseCase, UpdateExpenseUseCase>();
         }
     }
 }

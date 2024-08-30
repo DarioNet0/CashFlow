@@ -132,4 +132,7 @@
   <data name="UNKNOW_ERROR" xml:space="preserve">
     <value>Unknown error</value>
   </data>
+  <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
+    <value>Expense not found</value>
+  </data>
 </root>
