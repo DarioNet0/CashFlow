@@ -34,4 +34,10 @@
     <ProjectReference Include="..\CashFlow.Domain\CashFlow.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="UseCases\Exepenses\Reports\Pdf\Logo\ProfilePicture.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

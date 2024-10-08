@@ -13,34 +13,34 @@ namespace CashFlow.Infrastructure.DataAcess.Repositories
         }
         public async Task Add(Expense expense)
         {
-            await _dbContext.Expenses.AddAsync(expense);
+            await _dbContext.Expense.AddAsync(expense);
         }
 
         public async Task<List<Expense>> GetAll()
         {
-            return await _dbContext.Expenses.AsNoTracking().ToListAsync();
+            return await _dbContext.Expense.AsNoTracking().ToListAsync();
         }
         async Task<Expense?> IExpensesReadOnlyRepository.GetById(long id)
         {
-            return await _dbContext.Expenses.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
+            return await _dbContext.Expense.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
         }
         async Task<Expense?> IExpenseUpdateOnlyRepository.GetById(long id)
         {
-            return await _dbContext.Expenses.FirstOrDefaultAsync(e => e.Id == id);
+            return await _dbContext.Expense.FirstOrDefaultAsync(e => e.Id == id);
         }
         public async Task<bool> Delete(long id)
         {
-            var result = await _dbContext.Expenses.FirstOrDefaultAsync(e => e.Id == id);
+            var result = await _dbContext.Expense.FirstOrDefaultAsync(e => e.Id == id);
             if (result is null)
             {
                 return false;
             }
-            _dbContext.Expenses.Remove(result);
+            _dbContext.Expense.Remove(result);
             return true;
         }
         public void Update(Expense expense)
         {
-            _dbContext.Expenses.Update(expense);
+            _dbContext.Expense.Update(expense);
         }
 
         public async Task<List<Expense>> FilterByMonth(DateOnly date)
@@ -51,7 +51,7 @@ namespace CashFlow.Infrastructure.DataAcess.Repositories
             var endDate = new DateTime(year: date.Year, month: date.Month, day: daysInMonth, hour: 23, minute: 59, second: 59);
 
             return await _dbContext
-                .Expenses
+                .Expense
                 .AsNoTracking()
                 .Where(e => e.Date >= startDate && e.Date <= endDate)
                 .OrderBy(e => e.Date)
