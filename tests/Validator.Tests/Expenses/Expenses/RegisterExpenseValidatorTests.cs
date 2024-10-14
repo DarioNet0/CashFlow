@@ -1,6 +1,5 @@
 ﻿using Cash.Flow.Exception;
-using CashFlow.Application.UseCases.Exepenses.Register;
-using CashFlow.Communication.Requests;
+using CashFlow.Application.UseCases.Exepenses;
 using CommonTestUtilities.Requests;
 using FluentAssertions;
 
@@ -12,7 +11,7 @@ namespace Validator.Tests.Expenses.Register
         public void Sucess()
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseJsonBuild.Build();
             //Act
             var result = validator.Validate(request);
@@ -24,9 +23,9 @@ namespace Validator.Tests.Expenses.Register
         public void Error_Title_Empty()
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseJsonBuild.Build();
-            request.Title = string.Empty; 
+            request.Title = string.Empty;
             //Act
             var result = validator.Validate(request);
 
@@ -38,7 +37,7 @@ namespace Validator.Tests.Expenses.Register
         public void Error_Date_Future()
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseJsonBuild.Build();
             request.Date = DateTime.Now.AddHours(3);
             //Act
@@ -52,9 +51,9 @@ namespace Validator.Tests.Expenses.Register
         public void Error_Payment_Type_Invalid()
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseJsonBuild.Build();
-            request.paymentType = (CashFlow.Communication.Enums.PaymentType)700;
+            request.PaymentType = (CashFlow.Communication.Enums.PaymentType)700;
             //Act
             var result = validator.Validate(request);
 
@@ -70,9 +69,9 @@ namespace Validator.Tests.Expenses.Register
         public void Error_Amount_Invalid(decimal amount)
         {
             //Arrange
-            var validator = new RegisterExpenseValidator();
+            var validator = new ExpenseValidator();
             var request = RequestRegisterExpenseJsonBuild.Build();
-            request.paymentType = (CashFlow.Communication.Enums.PaymentType)700;
+            request.PaymentType = (CashFlow.Communication.Enums.PaymentType)700;
             request.Amount = amount;
             //Act
             var result = validator.Validate(request);
